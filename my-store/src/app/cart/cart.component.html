@@ -1,0 +1,31 @@
+<p *ngIf="cartList.length===0">your shopping cart is free, make a shop and add what you need!</p>
+<div  *ngIf="cartList.length>0" class="cart-container">
+<div class="products ">
+  <div *ngFor="let product of cartList" class="cart-item ">
+<img src={{product.url}}/>
+<div class="cart-item-details">
+  <p>{{product.name}}</p>
+  <p>${{product.price}}</p>
+  <p>Amount: {{amount}}</p>
+  <button (click)="increase()">increase</button>
+  <button (click)="decrease()">decrease</button>
+<input >
+</div>
+<h6>Total:{{totalPrice}}</h6>
+  </div>
+</div>
+<div class="form-margin cart-item-details">
+<label>Full Name</label>
+<input type="text" name="fullName" placeholder="(minimum 3 characters)"/>
+
+<label>Address</label>
+<input type="text" name="address" placeholder="(minimum 6 characters)"/>
+
+<label>Credit Card Numbers</label>
+<input type="text" name="cardNumber" placeholder="(16-digit number)"/>
+<p>we will never share your payment details with anyone else</p>
+</div>
+
+
+
+</div>
