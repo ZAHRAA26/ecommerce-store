@@ -27,7 +27,7 @@ product:Product;
     }
 
     addToCart(product:Product):void{
-this.cartProducts.unshift(product)
+this.cartProducts.push(product)
     }
   }
 
