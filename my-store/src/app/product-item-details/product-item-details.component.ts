@@ -34,6 +34,7 @@ constructor(private route: ActivatedRoute,private productService:ProductService,
   });
 }
 ngOnInit() {
+  console.log(this.product)
   }
 
 addToCart(product:Product){

@@ -1,10 +1,17 @@
 <div class="product-container">
-  <a routerLink="/product-item-details/{{product.id}}," routerLinkActive="active">
-    <img class="product-image" src={{product.url}} (click)="goToNextPage()" />
+  <a
+    [routerLink]="['/', 'product-item-details', product.id]"
+    routerLinkActive="active"
+  >
+    <img
+      class="product-image"
+      src="{{ product.url }}"
+      (click)="goToNextPage()"
+    />
   </a>
-  <p>{{product.name}}</p>
-  <p>${{product.price}}</p>
-  <select  name="quantity" class="select-input" type ="select">
+  <p>{{ product.name }}</p>
+  <p>${{ product.price }}</p>
+  <select name="quantity" class="select-input" type="select">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -17,5 +24,4 @@
     <option value="10">10</option>
   </select>
   <button (click)="addToCart(product)">Add To Cart</button>
-
 </div>
