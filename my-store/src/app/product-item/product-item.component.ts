@@ -1,9 +1,10 @@
-import { Component,Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 // import { Router } from '@angular/router';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Product } from '../models/Product';
-import {ProductService}from "../services/product.service"
+import { ProductService } from "../services/product.service"
+import { CartService } from './../services/cart.service';
 
 @Component({
   selector: 'app-product-item',
@@ -11,24 +12,30 @@ import {ProductService}from "../services/product.service"
   styleUrls: ['./product-item.component.css']
 })
 export class ProductItemComponent {
-@Input() product:Product
-constructor(private productService:ProductService,private router:Router){
-  this.product={
-    id:1,
-    name: "",
-    price: 0.0,
-    url: "",
-    description: ""
-  }
+  @Input() product: Product
+  @Output() totalAmount = new EventEmitter();
+  selectedValues: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  selectedItem: number = 1
+  productInCart: Product
+  constructor(private productService: ProductService, private cartService: CartService, private router: Router) {
 
   }
-  addToCart(product:Product){
-    this.productService.addToCart(product)
+  changeQuantity(value: number, product: Product) {
+    this.selectedItem = value
+    this.product.amount = this.selectedItem
+
+    this.totalAmount.emit(product);
+
+    console.log(this.product)
+  }
+  addToCart(p: Product) {
+    let productInCart
+    productInCart = this.cartService.getCartProducts().find(product => product.id === p.id)
+    productInCart ? (productInCart.amount += +this.selectedItem, console.log(1 + this.selectedItem)) : (p.amount = +this.selectedItem, this.cartService.addToCart(p))
+    console.log(p.amount + 1)
     alert("Product added!");
   }
-  goToNextPage(){
-let paramid=3
-this.router.navigate(['product-item-details',paramid])
-  }
+  // orderQuantity() {
+  // }
 }
 

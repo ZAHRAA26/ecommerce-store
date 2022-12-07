@@ -1,27 +1,24 @@
-# MyStore
+//after downloading it you will need to just install node module by this instruction:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
+```js
+npm install
+```
 
-## Development server
+and then you will need to install node module writing this only line of code :
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```js
+npm start
+```
 
-## Code scaffolding
+Then You Can see the project alive!
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- first page is the home page that looks like :
+  ![product Lists page](https://drive.google.com/file/d/15bCxTiIkfQJQO08EaMCHVKTq_Gd3tx-R/view?usp=sharing)
+  from which we can click on any product to get its details and this will be the view
+  ![product](https://drive.google.com/file/d/1brihduqz3gxQH1ZnRkECY-Nvz_28Sg8O/view?usp=sharing)
+  we then can identify the amount and click add to the cart button ,there will be confirmation alert that confirms that item has been added to cart
+  ![confirmation](https://drive.google.com/file/d/1CZWTEetakpq3VdP2J8-twUUC4fbati2w/view?usp=share_link)
+  and when e click on the cart tab it will shows us what products that is in the cart.
+  ![cart view](https://drive.google.com/file/d/1eq4QGIaZIQKHbO-zHMp1M27Tszi3_avU/view?usp=sharing)
+  then we can fill the form and a confirmation page will be shown with sucess.
+  ![ordered successfully](https://drive.google.com/file/d/1TT4khv7WoWXrOJtN1PhqZ4umqhFcyz1P/view?usp=sharing)

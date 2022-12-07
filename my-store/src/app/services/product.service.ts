@@ -7,27 +7,16 @@ import { Product } from '../models/Product';
   providedIn: 'root'
 })
 export class ProductService {
-products:Product[]=[];
+  products: Product[] = [];
 
-cartProducts:Product[]=[];
-product:Product;
-  constructor(private httpClient:HttpClient) {
-    this.product={
-      id:1,
-      name:"",
-      price:0.0,
-      description:"",
-      url:""
+  product: Product;
+  constructor(private httpClient: HttpClient) {
 
-    }
   }
 
-  getProducts():Observable <Product[]>{
+  getProducts(): Observable<Product[]> {
     return this.httpClient.get<Product[]>('../../assets/data.json')
-    }
-
-    addToCart(product:Product):void{
-this.cartProducts.push(product)
-    }
   }
+
+}
 
