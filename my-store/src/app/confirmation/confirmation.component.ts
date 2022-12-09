@@ -5,15 +5,14 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-confirmation',
   templateUrl: './confirmation.component.html',
-  styleUrls: ['./confirmation.component.css']
+  styleUrls: ['./confirmation.component.css'],
 })
 export class ConfirmationComponent {
-  fullName: string
-  totalPayments: number
+  fullName: string;
+  totalPayments: number;
   routerSubscription: Subscription;
   constructor(private route: ActivatedRoute) {
-    this.routerSubscription = this.route.params.subscribe(params => {
-      console.log(params)
+    this.routerSubscription = this.route.params.subscribe((params) => {
       this.fullName = params['fullName'];
       this.totalPayments = Number(params['totalPayments']);
     });
@@ -21,5 +20,4 @@ export class ConfirmationComponent {
   ngOnDestroy(): void {
     this.routerSubscription.unsubscribe();
   }
-
 }

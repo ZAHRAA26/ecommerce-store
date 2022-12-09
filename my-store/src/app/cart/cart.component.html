@@ -57,6 +57,7 @@
       minlength="16"
       maxlength="16"
       required
+      [pattern]="cardNumberPattern"
     />
     <p>we will never share your payment details with anyone else</p>
     <button class="btn-primary" type="submit" [disabled]="form.invalid">
