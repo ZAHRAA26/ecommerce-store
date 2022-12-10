@@ -37,8 +37,9 @@ export class CartComponent implements OnInit {
   remove(id: number) {
     this.cartService.deleteProduct(id);
     this.cartList = this.cartService.getCartProducts();
+    alert('product has been successfully');
   }
-  orderNow() {
+  orderNow(fullName: string, totalPrice: number) {
     this.Router.navigate(['/confirmation', this.fullName, this.totalPrice]);
   }
 }
