@@ -12,7 +12,7 @@ export class CartComponent implements OnInit {
   existingProductS: Product[];
   totalPrice: number = 0.0;
   amount: number;
-  cardNumberPattern: string = '^[0-9]$' && '^[0-9]';
+  cardNumberPattern: string = '^[0-9]*$';
   fullName: string;
   address: string;
   creditCard: number;
@@ -39,7 +39,7 @@ export class CartComponent implements OnInit {
     this.cartList = this.cartService.getCartProducts();
     alert('product has been successfully');
   }
-  orderNow(fullName: string, totalPrice: number) {
+  orderNow() {
     this.Router.navigate(['/confirmation', this.fullName, this.totalPrice]);
   }
 }
